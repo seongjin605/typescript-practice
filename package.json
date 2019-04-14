@@ -2,11 +2,11 @@
   "name": "test",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/Variables.js",
   "author": "psj",
   "license": "ISC",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node src/Variables.js",
     "prestart": "tsc"
   }
 }

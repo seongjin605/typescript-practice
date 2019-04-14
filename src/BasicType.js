@@ -147,4 +147,4 @@ let someValue2 = "this is a string";
 let strLength2 = someValue.length;
 console.log("someValue2 => ", someValue2);
 console.log("strLength2 => ", strLength2);
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=BasicType.js.map
