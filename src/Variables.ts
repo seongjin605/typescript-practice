@@ -20,7 +20,8 @@ function f(input: boolean) {
     let b = a + 1;
     return b;
   }
-
   // 오류: 'b'는 여기에 존재하지 않습니다.
-  //return b;
+  // return b;
 }
+
+console.log(f(true));
