@@ -1,23 +1,22 @@
-// function f() {
-//   var a = 10;
-//   console.log("a=", a);
-//   return function g() {
-//     var b = a + 1;
-//     console.log("b=", b);
-//     return b;
-//   };
-// }
-// var g = f();
-// g(); // 오류 '11'
-// let : 렉시컬-스코프 또는 블록-스코프를 사용
-function f(input) {
-    var a = 100;
-    if (input) {
-        // 'a'는 이곳에서 가능
-        var b = a + 1;
-        return b;
-    }
-    // 오류: 'b'는 여기에 존재하지 않습니다.
-    // return b;
+function test() {
+    const fullName = `Bob Bobbington`;
+    const age = 37;
+    const sentence = `Hello, my name is ${fullName}.
+  I'll be ${age + 1} years old next month.`;
+    return sentence;
 }
-console.log(f(true));
+console.log(test());
+function test2() {
+    const list = [1, 2, 3];
+    return list.map(n => n);
+}
+console.log(test2());
+const states = [
+    { name: 'test', capital: 'seoul' },
+    { name: 'test1', capital: 'tokyo' },
+    { name: 'test2', capital: 'beijing' }
+];
+for (const state of states) {
+    console.log(state.name);
+}
+//# sourceMappingURL=Variables.js.map

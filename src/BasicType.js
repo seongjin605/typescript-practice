@@ -1,31 +1,32 @@
 /* 부울 (Boolean)
 가장 기본적인 데이터 타입은 JavaScript와 TypeScript가 boolean 값을 호출하는 단순한 true / false 값입니다.*/
-var isDone = false;
+let isDone = false;
 console.log("isDone => ", isDone);
 /* 숫자형 (Number)
 JavaScript와 마찬가지로 TypeScript의 모든 숫자는 부동 소수 점 값입니다.
 이 부동 소수 점 숫자는 number 타입을 받습니다.
 TypeScript는 10진수 및 16진수와 함께 ECMAScript2015에 도입된 2진수 및 8진수 문자를 지원합니다.*/
-var decimal = 6;
-var hex = 0xf00d;
-var binary = 10;
-var octal = 484;
+let decimal = 6;
+let hex = 0xf00d;
+let binary = 0b1010;
+let octal = 0o744;
 console.log(decimal, hex, binary, octal);
 /* 문자열 (String)
 웹 페이지와 서버를 위한 JavaScript 프로그램을 만드는 또 다른 기본적인 부분은 텍스트 데이터를 사용하는 것입니다.
 다른 언어와 같이 이러한 텍스트의 데이터 타입을 참조하기 위해 string 타입을 사용합니다.
 JavaScript와 마찬가지로 TypeScript 또한 문자열 데이터를 감싸기 위해 큰 따옴표(") 또는 작은 따옴표(')를 사용합니다.*/
-var color = "blue";
+let color = "blue";
 color = "red";
 console.log("color => ", color);
 /* 여러 줄에 걸쳐 표현식을 포함할 수 있는 템플릿 문자열 을 사용할 수도 있습니다.
 이 문자열은 백틱 / 백 쿼트 (` ) 문자로 감싸져 있으며 포함된 표현식은 ${ 표현식 } 형식입니다.*/
-var fullName = "Bob Bobbington";
-var age = 37;
-var sentence1 = "Hello, my name is " + fullName + ".\nI'll be " + (age + 1) + " years old next month.";
+let fullName = `Bob Bobbington`;
+let age = 37;
+let sentence1 = `Hello, my name is ${fullName}.
+I'll be ${age + 1} years old next month.`;
 console.log(sentence1);
 //이것은 위와 같이 선언한 문장과 같습니다.
-var sentence2 = "Hello, my name is " +
+let sentence2 = "Hello, my name is " +
     fullName +
     ".\n\n" +
     "I'll be " +
@@ -33,14 +34,14 @@ var sentence2 = "Hello, my name is " +
     " years old next month.";
 console.log(sentence2);
 //배열
-var list1 = [1, 2, 3];
-var list2 = [1, 2, 3];
+let list1 = [1, 2, 3];
+let list2 = [1, 2, 3];
 list1.push(4);
 console.log(list1);
 /*튜플(tuple)
 튜플 타입은 고정된 개수의 요소 타입을 알고 있지만 반드시 같을 필요는 없는 배열을 표현할 수 있도록 합니다.
 예를 들어, 다음과 같은 string과 number의 쌍으로 값을 나타낼 수 있습니다*/
-var x;
+let x;
 x = ["hello", 123];
 //x = [123452, "text"];  //타입 오류
 console.log(x);
@@ -52,8 +53,8 @@ var ColorEnum;
     ColorEnum[ColorEnum["Green"] = 1] = "Green";
     ColorEnum[ColorEnum["blue"] = 2] = "blue";
 })(ColorEnum || (ColorEnum = {}));
-var getEnum = ColorEnum.Red;
-var getEnum2 = ColorEnum.Green;
+let getEnum = ColorEnum.Red;
+let getEnum2 = ColorEnum.Green;
 console.log("getEnum index => ", getEnum); //Enum index 0부터 시작
 console.log("getEnum index => ", getEnum2);
 /* enum의 편리한 기능은 숫자 값에서 enum의 해당 값 이름으로 이동할 수 있다는 것입니다.
@@ -65,7 +66,7 @@ var GuessEnum;
     GuessEnum[GuessEnum["Are"] = 2] = "Are";
     GuessEnum[GuessEnum["You"] = 3] = "You";
 })(GuessEnum || (GuessEnum = {}));
-var guessWhat = GuessEnum[2];
+let guessWhat = GuessEnum[2];
 console.log("guessWhat => ", guessWhat);
 /* Any
 어플리케이션을 작성할 때 알지 못하는 변수의 타입을 설명해야 할 수도 있습니다.
@@ -73,7 +74,7 @@ console.log("guessWhat => ", guessWhat);
 이러한 경우에는, 타입 검사를 선택하지 않고 그 값이 컴파일-타임 검사를 통과하도록 하고 싶습니다.
 이를 위해 다음과 같은 any 타입으로 지정합니다.
 */
-var notSure = 4;
+let notSure = 4;
 notSure = "문자열 인가?";
 notSure = false;
 console.log("notSure => ", notSure);
@@ -81,15 +82,15 @@ console.log("notSure => ", notSure);
 
 다른 언어와 마찬가지로 객체도 비슷한 역할을 할 것으로 예상할 수 있습니다.
 그러나 객체 타입의 변수를 사용하면 해당 객체에는 값만 할당할 수 있습니다 - 실제로 존재하는 것도 임의의 메서드를 호출할 수는 없습니다*/
-var notSure2 = 4;
+let notSure2 = 4;
 //notSure2.ifItExists(); // 좋아요, 런타임에 ifItExists가 존재할 수 있습니다.
 notSure2.toFixed(); // 좋아요, toFixed는 존재합니다. (그러나 컴파일러는 체크하지 않습니다)
 console.log("notSure2 => ", notSure2);
-var prettySure = 4;
+let prettySure = 4;
 //prettySure.toFixed(); // 오류: 'Object' 타입에 'toFixed' 프로퍼티는 존재하지 않습니다.
 /*any 타입은 일부를 알고 있는 경우에도 유용하지만 모두 그렇지는 않습니다.
 예를 들어 배열이 있지만 배열에는 다른 타입이 혼재되어 있습니다*/
-var AnyList = [1, true, "free"];
+let AnyList = [1, true, "free"];
 AnyList[1] = 100;
 console.log("AnyList[1] =>", AnyList[1]);
 /*void는 any의 정반대이지만 조금 비슷합니다: 어떠한 타입의 부재도 전혀 없습니다.
@@ -98,12 +99,12 @@ function warnUser() {
     alert("This is my warning message");
 }
 //void 타입의 변수 선언은 undefined 또는 null 만 할당할 수 있으므로 유용하지 않습니다:
-var unusable = undefined;
+let unusable = undefined;
 /*TypeScript에서 undefined와 null은 실제로 각기 undefined와 null이라는 자체적인 타입을 가집니다.
 void와 마찬가지로 그것들은 매우(극단적으로) 유용하지 않습니다*/
 // 그 외에도 이러한 변수에 할당할 수 있습니다!
-var u = undefined;
-var n = null;
+let u = undefined;
+let n = null;
 /*Never
 never 타입은 절대로 발생하지 않는 값의 타입을 나타냅니다.
 예를 들어 never는 함수 표현식의 반환 타입이거나 항상 예외를 던지는 화살표 함수 표현식이거나 절대 반환하지 않는 표현식입니다.
@@ -137,12 +138,13 @@ TypeScript는 개발자가 필요한 특별한 검사를 수행했다고 가정�
 
 Type assertions은 두 가지 형태를 가집니다.
 하나는 "angle-bracket" (꺾쇠괄호) 구문입니다*/
-var someValue = "this is a string";
-var strLength = someValue.length;
+let someValue = "this is a string";
+let strLength = someValue.length;
 console.log("someValue => ", someValue);
 console.log("strLength => ", strLength);
 //그리고 다른 하나는 구문은 as 입니다 :
-var someValue2 = "this is a string";
-var strLength2 = someValue.length;
+let someValue2 = "this is a string";
+let strLength2 = someValue.length;
 console.log("someValue2 => ", someValue2);
 console.log("strLength2 => ", strLength2);
+//# sourceMappingURL=BasicType.js.map
