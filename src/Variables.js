@@ -17,6 +17,10 @@ const states = [
     { name: 'test2', capital: 'beijing' }
 ];
 for (const state of states) {
-    console.log(state.name);
+    console.log(state.capital);
 }
+function add(a, b) {
+    return a + b;
+}
+// const kk: number = null;
 //# sourceMappingURL=Variables.js.map

@@ -29,3 +29,9 @@ const states: State[] = [
 for (const state of states) {
   console.log(state.capital);
 }
+
+function add(a: number, b: number) {
+  return a + b;
+}
+
+// const kk: number = null;

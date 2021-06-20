@@ -6,7 +6,7 @@
   "author": "psj",
   "license": "ISC",
   "scripts": {
-    "start": "node src/Variables.js",
+    "start": "node src/test.js",
     "prestart": "tsc"
   }
 }
