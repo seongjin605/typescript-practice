@@ -15,12 +15,12 @@ function test2() {
 
 console.log(test2());
 
-interface State {
+interface StateTest {
   name: string;
   capital: string;
 }
 
-const states: State[] = [
+const states: StateTest[] = [
   { name: 'test', capital: 'seoul' },
   { name: 'test1', capital: 'tokyo' },
   { name: 'test2', capital: 'beijing' }
